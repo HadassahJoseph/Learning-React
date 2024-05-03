@@ -1,0 +1,10 @@
+Learning react from linkedin learning -> React Native Essential Training
+Teacher -> Samer Buna
+## Day 1 - Introduction to React Native
+Building two projects a simple calculator and a more advanced application 
+** Enure you know javascript or react before you learn this course 
+another prerequisites :
+Modern Javascript 
+React API 
+
+
