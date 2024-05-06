@@ -1,10 +1,226 @@
-Learning react from linkedin learning -> React Native Essential Training
-Teacher -> Samer Buna
-## Day 1 - Introduction to React Native
-Building two projects a simple calculator and a more advanced application 
-** Enure you know javascript or react before you learn this course 
-another prerequisites :
-Modern Javascript 
-React API 
+Starting from May 4th I am learning react native 
+There are so many good teachers out there to learn react native with but i have 
+decided to start with "Programming with Mosh"
+Link: https://www.youtube.com/@programmingwithmosh
+Each chapter is a different teacher or different project 
+So excited to see what the future holds 
+
+CHAPTER 1 = Marketplace for Selling items 
+* Learn to build apps with confidence 
+* This course means i should know javascript or react 
+* react native is built on top of react but instead of targeting the browser it targets mobile platforms
+* Need a good understanding for concepts such as components JSX prop state etc 
+Programming with mosh -> React Tutorial: Link: https://youtu.be/SqcY0GlETPk?si=fXgJLLaaTzqodqL4
+
+## What is React Native 
+- React native is a framework for building native apps(Android/iOS) using javascript 
+- These apps are native and don't look like web app on mobile 
+- lot of companies use frameworks like flutter and react native because they don't need to hire to separate teams
+- Companies that use react native uber eats , facebook , instagram etc 
+- 2 ways to build react native apps either expo CLI or react native CLI 
+- Expo is a set of tools and a framework that sits on top of react it hides a lot of complexities 
+from us and makes it incredibly fast and easy to build react native apps 
+- Expo is the way to go if your building applications
+- Second option is to build using react native CLI or command-line
+- you will have folders for android and ios and javascript on the side and is shared across these two platforms 
+- We will use expo which means we wont use the native api of the applications but expo gives a lot of native features
+
+##Setting up 
+- ensure running node version 12 or higher
+In command line : node -v 
+- Installing expo CLI globally 
+In command line : sudo npm i - g expo-cli
+- Install expo client on phone can run app on a physical device 
+- Code Editor - VS Code
+- Extensions used :
+    React native tools: by microsoft : helps debug our applications while inside vs code 
+    React native splash : code snippets 
+    prettier: format code 
+    material icon theme: pretty icons in project 
+
+## Building the app 
+- Creating our first expo project 
+In command line : expo init <app_name>
+    -- this did not work for me so i ran this instead: npx create-expo-app CH1
+- choosing a workflow 2 types manged and bare , manged expo takes care of the complexities behind the scene 
+bare workflow that will have the android and iOS folders which we don't want in this application 
+- Go with blank manged workflow template 
+
+- Once project is ready 
+In command line : cd  <app_name>
+- If your in your terminal you can open it in vscode by typing 
+In command line : code . 
+
+- In the project 
+- Assets : Images, audio files, videos etc 
+- App.js : basic react native competent : importing react native competent
+- React use function components
+
+-How to run the applications
+- Either using an emulator in android studio code or xcode 
 
 
+CHAPTER 2 = Javascript Mastery 
+React JS Full Course 2023 | Build an App and Master React in 1 Hour
+
+- In this lesson creates a movie application but i am thinking of changing it 
+Ideas :- Books, Music , Recipes, Travel Destinations, Fashion , Art and Design , 
+Fitness and Health, Home Decor.
+Someone changed it to games. I think i will do it for crochet patterns that would be 
+fun and i am interested in that 
+
+-Practice 1 
+import './App.css';
+
+function App() {
+  const name = 'Abby';
+  return (
+    // diffrences in html and jxs
+    <div className="App">
+    If the variable is false it prints someone if it is true it prints true
+      <h1>Hello, { name}!</h1>
+    </div>
+  );
+}
+
+export default App;
+
+-Practice 2
+import './App.css';
+
+function App() {
+  const name = 'Abby';
+  const isNameShowing = false;
+  return (
+    // diffrences in html and jxs
+    <div className="App">
+    If the variable is false it prints someone if it is true it prints true
+      <h1>Hello, {isNameShowing ? name : 'someone'}!</h1>
+    </div>
+  );
+}
+
+export default App;
+
+- Practice 3
+- When the name is null it prints no name when a name is present it prints the name entered
+import './App.css';
+
+function App() {
+  const name = null;
+  return (
+    // diffrences in html and jxs
+    <div className="App">
+      <h1>Hello, {2+2}!</h1>
+      {name ? (
+        <>
+        {name}
+        </>
+      ) : (
+        <>
+        <h1>test</h1>
+        <h2>There is no name</h2>
+        </>
+      )}
+    </div>
+  );
+}
+
+export default App;
+
+- Practice 4
+import './App.css';
+
+function App() {
+  const Person = () => {
+    return (
+      <>
+      <h1>Name: John</h1>
+      <h2>Last Name: Doe</h2>
+      <h2>Age: 30</h2>
+      </>
+    )
+  }
+  return (
+    // diffrences in html and jxs
+    <div className="App">
+      <Person/>
+    </div>
+  );
+}
+
+export default App;
+
+
+- Practice 5
+- This can be used to change each value in person 
+
+import './App.css';
+
+function App() {
+  const Person = (props) => {
+    return (
+      <>
+      <h1>Name: {props.name}</h1>
+      <h2>Last Name: Doe</h2>
+      <h2>Age: 30</h2>
+      </>
+    )
+  }
+  return (
+    // diffrences in html and jxs
+    <div className="App">
+      <Person name={'John'}/>
+      <Person name={'Mart'}/>
+      <Person name={'Mary'}/>
+    </div>
+  );
+}
+
+export default App;
+
+- Pratice 6
+- simple counter system
+
+import { useState } from 'react';
+import './App.css';
+
+function App() {
+
+  const[counter, setCounter] = useState(0);
+
+  return (
+    // diffrences in html and jxs
+    <div className="App">
+   <button onClick={() => setCounter((prevCounter) =>prevCounter - 1)}>-</button>
+   <h1>{counter}</h1>
+   <button onClick={() => setCounter((prevCounter) =>prevCounter + 1)}>+</button>
+    </div>
+  );
+}
+
+export default App;
+
+- Practice 7
+- Adding an alert to represent the counter
+import { useState, useEffect } from 'react';
+import './App.css';
+
+function App() {
+
+  const[counter, setCounter] = useState(0);
+
+  useEffect(() => {
+    alert("You've changed the counter to " + counter)
+  }, [counter]);
+  return (
+    // diffrences in html and jxs
+    <div className="App">
+   <button onClick={() => setCounter((prevCounter) =>prevCounter - 1)}>-</button>
+   <h1>{counter}</h1>
+   <button onClick={() => setCounter((prevCounter) =>prevCounter + 1)}>+</button>
+    </div>
+  );
+}
+
+export default App;
